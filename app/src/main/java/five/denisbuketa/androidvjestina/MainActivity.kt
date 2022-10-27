@@ -23,22 +23,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AndroidvjestinaTheme {
-                val coroutineScope = rememberCoroutineScope()
-                val scaffoldState: ScaffoldState = rememberScaffoldState()
-                val navController = rememberNavController()
 
-                Scaffold(
-                    scaffoldState = scaffoldState,
-                    topBar = { TopAppBar { Text("Android Vjestina") } },
-                ) {
-                    NavHost(
-                        navController = navController,
-                        startDestination = Screen.Notes.route
-                    ) {
-                        composable(Screen.Notes.route) { NotesScreen(navController) }
-                        composable(Screen.SaveNote.route) { SaveNoteScreen() }
-                    }
-                }
             }
         }
     }
